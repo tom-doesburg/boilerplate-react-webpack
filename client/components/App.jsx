@@ -9,6 +9,8 @@ class App extends React.Component {
     this.state = {
       pokemon: {},
       name: '',
+      order: '',
+      image: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -23,7 +25,8 @@ class App extends React.Component {
     getPokemon(id)
     .then(pokemon => {
       this.setState({
-        pokemon: pokemon
+        pokemon: pokemon,
+        image: pokemon.sprites.front_default
       })
     })
   }
@@ -34,26 +37,27 @@ class App extends React.Component {
   }
 
   handleChange() {
-    console.log(event.target.value)
     this.setState({
       [event.target.name]: event.target.value,
     })
   }
 
   render() {
-    console.log(this.state)
     
     return (
       <div>
-        <div>
+        <div className="blue-text">
           <h1>hi friends and family</h1>
         </div>
-        <div>
+        <div className="blue-text">
           <form method= "POST" onSubmit={this.handleSubmit}/>
-          <label style={{display: 'block'}}/>PokéDex Number: <input type="text" name="id" onChange={this.handleChange}/>
+          <label style={{display: 'block'}}/>Insert a number: <input type="text" name="id" onChange={this.handleChange}/>
           {/* <input type="submit">Go!</input><br/><br/>  */}
           <button onClick={this.handleSubmit}>ok</button><br/><br/> 
-          Name: {this.state.pokemon.name && this.state.pokemon.name}
+          Name: {this.state.pokemon.name && this.state.pokemon.name} <br/>
+          PokéDex Number: {this.state.pokemon.order && this.state.pokemon.order} <br/>
+          <img src={this.state.image}/>
+          <h3>i hate coding</h3>
         </div>
       </div>
     )
