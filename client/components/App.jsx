@@ -2,6 +2,7 @@ import React from 'react'
 import { getPeople } from '../api/swapi'
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -20,6 +21,7 @@ class App extends React.Component {
       .then(people => {
         this.setState({
           people: people
+
         })
       })
   }
@@ -30,7 +32,16 @@ class App extends React.Component {
         <h1>React development has begun!</h1>
         {this.state.people.map(person => {
           return (
-            <p>{person.name}</p>
+            <div>
+              <p><h1>{person.name} was born {person.birth_year}</h1></p>
+
+              <p><h3>Personal details</h3></p>
+              <ul>
+                <li>Eye Color: {person.eye_color}</li>  <li>Mass: {person.mass}</li>
+                <li>Gender: {person.gender}</li><li>Skin Color: {person.height}</li>
+                <li>Hair Color: {person.hair_color}</li><li>Height: {person.height}</li>
+              </ul>
+            </div>
           )
         })}
       </>
