@@ -39,9 +39,10 @@ class App extends React.Component {
        <>
         <h1>React development has begun!</h1>
         <ul>{this.state.pokemon.map(pokemon => {
-          return <li>{pokemon.name} &nbsp; <a href="https://pokeapi.co/api/v2/pokemon/1/"></a></li>
+          return <li>{pokemon.name} &nbsp; <a href="https://pokeapi.co/api/v2/pokemon/1/">Details</a></li>
         })}
         </ul>
+        
         
       </>
 
