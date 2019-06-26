@@ -5,6 +5,9 @@ const apiBaseUrl = 'http://xkcd.com/'
 
 
 export function getXkcd(id) { 
-  return request.get(apiBaseUrl + id + '/info.0.json')
-    .then(response => response.body)
+  return request.get('/api/xkcd/' + id)
+    .then(response => {
+        console.log(response.body)
+        return response.body
+    })
 }
