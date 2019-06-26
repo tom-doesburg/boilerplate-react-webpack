@@ -1,44 +1,52 @@
-import React from 'react'
-import { getMemes } from '../apis/memes'
+import React from "react";
+import { getMemes } from "../apis/memes";
 
-const memeId = 112126428
+const memeId = 112126428;
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       memes: []
-    }
+    };
   }
 
   componentDidMount() {
-    this.getMemesData()
-  } 
+    this.getMemesData();
+  }
 
-  getMemesData = () =>  {
+  getMemesData = () => {
     getMemes(memeId).then(memes => {
-      console.log(memes)
+      console.log(memes);
       this.setState({
-        memes: memes,
-      })
-    })
-  
+        memes: memes
+      });
+    });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <h1>Lets get this working!!! Boom</h1>
+        {this.state.memes.map(meme => {
+          return (
+            <React.Fragment>
+              <li>{meme.name}</li>
+              <li>{meme.url}</li>
+              <img src={meme.url} height="200"/>
+            </React.Fragment>
+          );
+        })}
+      </React.Fragment>
+    );
   }
-
-  render(){
-    return (<h1>Lets get this working!!! Boom</h1>)
-    this.state = map(memes)
-  }
-
-
 }
 
 // const App = () => {
 //   return (
-    
+
 //   )
 // }
 
-
-export default App
+export default App;
