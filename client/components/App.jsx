@@ -50,7 +50,7 @@ class App extends React.Component {
         </div>
         <div>
           <form method="POST" onSubmit={this.handleSubmit} />
-          <label style={{ display: 'block' }} />Choose a number between 0 and like 2500 and we'll serve up a comic: <input type="text" name="id" onChange={this.handleChange} />
+          <label style={{ display: 'block' }} />Choose a number between 0 and 2167 and we'll serve up a comic: <input type="text" name="id" onChange={this.handleChange} />
           <button onClick={this.handleSubmit}>ok</button><br />
           {this.state.comic.img && <img src={this.state.comic.img}/>}<br />
           {this.state.comic.alt}
