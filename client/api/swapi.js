@@ -1,10 +1,15 @@
 import request from 'superagent'
 
 
-const apiBaseUrl = 'https://swapi.co/'
+const apiBaseUrl = 'https://swapi.co/api/'
 
 
-function getPeople(name) {
-  request.get(apiBaseUrl + 'people/' + id)
-  .then(response.)
+export function getPeople() {
+  return request.get(apiBaseUrl + 'people/')
+    .then(response => {
+      const details = response.body.results
+      return details
+    })
 }
+
+

@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "knex": "^0.17.6",
     "superagent": "^5.0.2"
   },
   "devDependencies": {
