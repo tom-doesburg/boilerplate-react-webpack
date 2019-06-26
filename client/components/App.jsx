@@ -29,11 +29,11 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <h1>React development has begun!</h1>
+      <h1> Star Wars Characters </h1>
         {this.state.people.map(person => {
           return (
             <div>
-              <p><h1>{person.name} was born {person.birth_year}</h1></p>
+              <p><h2>{person.name} was born {person.birth_year}</h2></p>
 
               <p><h3>Personal details</h3></p>
               <ul>

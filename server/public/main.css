@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  display: contents;
+  width:50%;
+  background-color: black;
+  color: rgb(246, 224, 27);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+h1, h3 {
+  color: orangered;
+}
+
+h2 {
+  margin-left: 15px;
+  font-style: italic;
+  
+}
+
+h3 {
+  margin-left: 25px;
+}
