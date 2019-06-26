@@ -12,3 +12,4 @@ export function getPokemon(name) {
   return request.get(apiBaseUrl)
     .then(response => response.body.results)
 }
+

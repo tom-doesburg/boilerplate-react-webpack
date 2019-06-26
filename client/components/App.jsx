@@ -10,7 +10,10 @@ class App extends React.Component {
     this.state = {
       pokemon: []
     }
+
+    // this.showDetails = this.showDetails.bind(this)
   }
+
   componentDidMount() {
     this.getPokemonData()
   }
@@ -25,14 +28,21 @@ class App extends React.Component {
       })
   }
 
+  // showDetails (pokemon) {
+  //   this.setState({
+
+  //   })
+  // }
+
   render() {
     return (
        <>
         <h1>React development has begun!</h1>
         <ul>{this.state.pokemon.map(pokemon => {
-          return <li>{pokemon.name}</li>
+          return <li>{pokemon.name} &nbsp; <a href="https://pokeapi.co/api/v2/pokemon/1/">Details</a></li>
         })}
         </ul>
+        
       </>
 
     )
